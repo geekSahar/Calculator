@@ -6,48 +6,56 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-
+  
     class clsCalculator
     {
-        private int _Result=0;
-        private string _y ="";
-        public void Add(int x) {
-            _y=$"Result after adding {x}:";
+        private enum enOp { Initial, Adding, Subtracting, Multiplying, Dividing };
+        private double _Result=0;
+        private string  _clear;
+        private enOp _y =enOp.Initial;
+        private double _LastNumber;
+
+        public void Add(double x) {
+            _LastNumber=x;
+            _y =enOp.Adding;
             _Result += x; 
         }
-        public void Subtract(int x)
+        public void Subtract(double x)
         {
-            _y = $"Result after subtracting {x}:";
+            _LastNumber = x;
+            _y = enOp.Subtracting;
             _Result -= x;
         }
-        public void Multiply(int x)
+        public void Multiply(double x)
+
         {
-            _y = $"Result after Multplying {x}:";
+            _LastNumber = x;
+            _y = enOp.Multiplying;
             _Result *= x;
         }
-        public void Divide(int x)
+        public void Divide(double x)
         {
-           
+            _LastNumber = x;
             if (x == 0)
             {
                 Console.WriteLine("Cannot divide by zero");
                 return ;
             }
             _Result /= x;
-            _y = $"Result after dividing {x}: ";
+            _y = enOp.Dividing;
 
         }
         public void Clear()
         {
-
+            _LastNumber = 0;
             _Result = 0;
-            _y = $"Result cleared ";
 
+            _y = enOp.Initial;
         }
         public void PrintResult()
         {
 
-            Console.WriteLine($"{ _y}{_Result}");
+            Console.WriteLine($"Result after { _y} {_LastNumber }:{_Result}");
             
 
         }
