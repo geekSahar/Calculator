@@ -11,7 +11,6 @@ namespace Calculator
     {
         private enum enOp { Initial, Adding, Subtracting, Multiplying, Dividing };
         private double _Result=0;
-        private string  _clear;
         private enOp _y =enOp.Initial;
         private double _LastNumber;
 
