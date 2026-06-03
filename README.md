@@ -25,4 +25,6 @@ A simple console-based sequential calculator application built in **C#** using s
 
 * **Language:** C# (.NET Core / .NET Framework)
 * **IDE:** Visual Studio / VS Code
+  <img width="974" height="291" alt="image" src="https://github.com/user-attachments/assets/fef7238e-9e6f-4ca0-bd5b-4ebccbd16417" />
+
 
